@@ -20,10 +20,10 @@
 				      </div>
 				    </div>
 				 
-				    <div class="form-group">
+				    <div class="form-group" style="text-align: left;">
 				      <label for="textArea" class="col-lg-2 control-label">Description</label>
 				      <div class="col-lg-10">
-				        <textarea name="description" type="text" class="form-control">
+				        <textarea class="form-control" placeholder="Description" name="description" rows="3" id="textArea">
 				         <?php echo $articles->description;?>
 				        </textarea>
 				        

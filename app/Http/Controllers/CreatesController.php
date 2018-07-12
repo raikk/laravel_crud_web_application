@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\posttitle;
 
 class CreatesController extends Controller
 {
     public function home(){
     	$articles = Article::all();
     	return view('home', ['articles' => $articles]);
+
+    }
+
+    public function addTitle(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+        ]);
+        $title = new posttitle;
+        $title->title = $request->input('title');
+        $title->save();
+        return \Response::json(['success' => 'saved Successfully']);
     }
 
     public function add(Request $request){
